@@ -1,0 +1,13 @@
+// protoc --go_out=plugins=grpc:.  *.proto
+// need to specify plugins for service registration functions to generate
+
+syntax = "proto3";
+package api;
+
+message PingMessage {
+  string greeting = 1;
+}
+
+service Ping {
+  rpc SayHello(PingMessage) returns (PingMessage) {}
+}
